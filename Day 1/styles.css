@@ -29,8 +29,8 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 518px;
-  width: 518px;
+  width: min(90%, 518px);
+  aspect-ratio: 1;
   border-radius: 50%;
   box-shadow: -5px 14px 44px #000000, 5px -16px 50px rgba(255, 255, 255, 0.15);
 }
@@ -39,8 +39,12 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1;
-  stroke: var(--color-green)
+  stroke: var(--color-green);
+  overflow: hidden;
+
 }
 
 .ring.ending {
@@ -52,8 +56,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 500px;
-  height: 500px;
+  height: min(90%, 518px);
+  width: min(90%, 518px);
+  aspect-ratio: 1;
   border-radius: 50%;
   color: white;
   background: radial-gradient(71.4% 71.4% at 51.7% 28.6%, #3A393F 0%, #17171A 100%);
@@ -64,9 +69,12 @@ body {
 
 .time {
   display: flex;
-  font-size: 196px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(8rem, 9rem, 13.25rem);
   font-family: "bebas";
-  margin-block: 30px;;
+  margin-block: 15px;
 }
 
 input[type="text"] {
@@ -75,10 +83,15 @@ input[type="text"] {
   background: none;
   color: white;
   font-family: "bebas";
-  font-size: 196px;
-  width: 150px;
-  text-align: center;
+  font-size: clamp(8rem, 9rem, 12.25rem);
+  width: max(70%, 2rem);
+  width: 100%;
+  text-align: left;
   outline:none;
+}
+
+.minutes input[type="text"]{
+  text-align: right;
 }
 
 input[type="text"]:focus {
@@ -95,7 +108,7 @@ input[type="text"]:disabled {
 .start {
   background: none;
   border: none;
-  margin-bottom: 20px;;
+  margin-bottom: 20px;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   text-transform: uppercase;

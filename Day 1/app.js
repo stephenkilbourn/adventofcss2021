@@ -22,8 +22,8 @@ settingsButton.addEventListener('click', () => {
   if(running) {
     pauseTimer()
   }
-  secondsInput.disabled = false;
-  minutesInput.disabled = false;
+  secondsInput.disabled = !secondsInput.disabled;
+  minutesInput.disabled = !minutesInput.disabled;
 })
 
 const validateTimeInput = (e) => {
@@ -36,9 +36,9 @@ const blurTime = (e) => {
 }
 
 minutesInput.addEventListener('keyup', validateTimeInput);
-minutesInput.addEventListener('blur', blurTime);
+minutesInput.addEventListener('change', blurTime);
 secondsInput.addEventListener('keyup', validateTimeInput);
-secondsInput.addEventListener('blur', blurTime);
+secondsInput.addEventListener('change', blurTime);
 
 const startTimer = () => {
   running = true;
