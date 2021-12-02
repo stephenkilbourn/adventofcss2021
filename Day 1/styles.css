@@ -1,0 +1,124 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+@font-face {
+  font-family: "bebas";
+  src: url('./fonts/bebasneue-book-webfont.woff') format('woff'),
+    url('./fonts/bebasneue-book-webfont.woff2') format('woff2');
+}
+
+html {
+  --color-background: hsl(250deg, 7%, 18%);
+  --color-red: hsl(0deg, 100%, 30.8%);
+  --color-green: hsl(148.6deg, 100%, 33.3%);
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-background);
+  min-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 28px;
+  width: 518px;
+  border-radius: 50%;
+  box-shadow: -5px 14px 44px #000000, 5px -16px 50px rgba(255, 255, 255, 0.15);
+}
+
+.ring {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  stroke: var(--color-green)
+}
+
+.ring.ending {
+  stroke: var(--color-red)
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  color: white;
+  background: radial-gradient(71.4% 71.4% at 51.7% 28.6%, #3A393F 0%, #17171A 100%);
+  box-shadow: inset 0px 0px 114px rgba(0, 0, 0, 0.45);
+  position: relative;
+  z-index: 2;
+}
+
+.time {
+  display: flex;
+  font-size: 196px;
+  font-family: "bebas";
+  margin-block: 30px;;
+}
+
+input[type="text"] {
+  border: 0;
+  border-bottom: 1px dashed white;
+  background: none;
+  color: white;
+  font-family: "bebas";
+  font-size: 196px;
+  width: 150px;
+  text-align: center;
+  outline:none;
+}
+
+input[type="text"]:focus {
+  border-bottom: 0;
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: var(--color-red);
+}
+
+input[type="text"]:disabled {
+  border-bottom: none;
+}
+
+.start {
+  background: none;
+  border: none;
+  margin-bottom: 20px;;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+  opacity: 0.5;
+  outline: none;
+}
+
+.start:focus,
+.start:hover {
+  opacity: 1;
+}
+
+.settings {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  outline: none;
+}
+
+.settings:focus,
+.settings:hover {
+  opacity: 1;
+}
