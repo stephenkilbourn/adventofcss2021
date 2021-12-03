@@ -1,0 +1,35 @@
+html {
+  --color-teal: #37B2C3;
+  --color-yellow: #ffd200;
+  --color-pink: #f40082;
+}
+
+body {
+  background: var(--color-teal);
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.white-keys {
+  fill: white;
+}
+
+a:hover .white-keys {
+  fill: var(--color-yellow);
+}
+
+.black-keys {
+  fill: black;
+}
+
+a:hover .black-keys{
+  fill: var(--color-pink);
+}
