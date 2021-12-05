@@ -6,7 +6,7 @@ let audio
 
 keys.forEach((key, i) => {
   key.dataset.index = i + 1
-  key.addEventListener('click', (e) => {
+  key.addEventListener('mouseover', (e) => {
     const index = e.target.dataset.index;
     playSound(index)
   })
