@@ -15,20 +15,20 @@
 }
 
 body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 100vw;
-  min-height: 100vh;
-  box-sizing: border-box;
 }
 
 .keyboard {
   background: #F6F6F6;
   padding: 45px 40px;
-  border-radius: 40px;;
+  border-radius: 40px;
+  position: relative;
 }
 
 .row {
@@ -40,33 +40,32 @@ body {
 }
 
 .key {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  border-radius: 16px;
+  background: #FFFFFF;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
   border: none;
-  box-shadow: 0px 1 px 8px rgba(0, 0, 0, 0.05);
-  box-sizing: border-box;
+  border-radius: 16px;
   color: #60C1B6;
   cursor: pointer;
+  display: flex;
   font-family: 'Inter', sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
-  height: 65px;
+  justify-content: center;
   min-width: 65px;
-  padding: 18px 14px;
-  text-transform: uppercase;
-}
-
-.key:hover {
-  background: #ffd200;
-  color: black;
+  align-items: center;
+  padding: 18px 24px;
+  height: 65px;
+  box-sizing: border-box;
 }
 
 .utility {
   color: #868888;
-  flex:auto;
+  flex: auto;
+}
+
+.key:hover {
+  background:  #ffd200;
+  color: black;
 }
 
 .jiggle {
