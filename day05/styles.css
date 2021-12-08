@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;900&display=swap');
+
+
+
+body {
+  background: hsla(0, 0%, 95%, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nunito Sans', sans-serif;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.cover {
+  filter: drop-shadow(0px 5.40459px 32.4276px #453F3F);
+}
+ img {
+  max-height: 49rem;
+  aspect-ratio: 1/1;
+}
+
+.content {
+  font-size: 2rem;
+  line-height: 2.75rem;
+  background: white;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  padding: 80px 108px; 
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.content h1 {
+  color: hsla(0, 0%, 65%, 1);
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin: 0;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+ .content ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.content li {
+  margin-bottom: 24px;
+  font-size: 1.75rem;
+}
+
+.content input[type=checkbox] {
+  display: none;
+}
+
+.content input[type=checkbox]  + span {
+  background: url('images/checkbox--unchecked.svg') left top no-repeat;
+  background-size: 38px 38px;
+  min-height: 38px;
+  padding-left: 60px;
+}
+
+.content input[type=checkbox]:checked  + span {
+  background: url('images/checkbox--checked.svg') left top no-repeat;
+  background-size: 38px 38px;
+  min-height: 38px;
+  color: #C9CDD1;
+  text-decoration: line-through;
+}
+
+.content label {
+  cursor: pointer;
+}
