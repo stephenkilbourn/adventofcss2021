@@ -59,7 +59,7 @@ body {
 }
 
 .row {
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 12px;
@@ -67,23 +67,21 @@ body {
 }
 
 .key {
-
   border: none;
   border-radius: 16px;
   color: #60C1B6;
   cursor: pointer;
-  display: flex;
   font-family: 'Inter', sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
-  justify-content: center;
   min-width: 65px;
-  align-items: center;
-  padding: 18px 24px;
   position: relative;
-  height: 4rem;
-  box-sizing: border-box;
-  display: inline-flex;
+  padding: 0;
+}
+
+.key:focus-visible {
+  outline: #60C1B6 solid 2px;
+  outline-offset: 4px;
 }
 
 .front {
@@ -94,10 +92,8 @@ body {
   background: white;
   border-radius: 12px;
   color: #60C1B6;
-  height: 4rem;
-  min-width: 65px;
   margin: 0;
-  padding: 0px;
+  padding: 18px 24px;
   transform: translateY(-4px);
   will-change: transform;
   transition: transform 
@@ -109,11 +105,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 99%;
   height: 4rem;
   border-radius: 12px;
   background: hsl(0deg 0% 0% / 0.25);
-  background: transparent;
   transform: translateY(2px);
   padding: 0;
 }
@@ -122,11 +117,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 99%;
   height: 4rem;
   border-radius: 12px;
   background: rgba(0, 0, 0, 0.15);
-  background: transparent;
   padding: 0;
 }
 
@@ -163,6 +157,4 @@ body {
 .jiggle {
   animation: jiggle 1s;
   animation-iteration-count: infinite;
-  /* background: #60c186; */
-  /* color: white; */
 }
