@@ -12,6 +12,5 @@ const updatePrice = (priceInCents) => {
 }
 
 priceRange.addEventListener( 'input', (e) => {
-  console.log(e.target.value)
   priceRange.style.background = `linear-gradient(to right, hsla(341, 81%, 56%, 1) 0%, hsla(341, 81%, 56%, 1) ${e.target.value/100}%, hsla(250, 4%, 31%, 1) ${e.target.value/100}%, hsla(250, 4%, 31%, 1) 100%)`
 } );
