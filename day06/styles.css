@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap');
+
+body {
+  background: hsla(254, 6%, 15%, 1);
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.25;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.wrapper {
+  box-shadow: 0px 0px 250px 0px hsla(0, 0%, 0%, 1);
+  border-radius: 20px;
+  padding: 60px 55px;
+  text-align: center;
+}
+
+.amount {
+  font-size: 6rem;
+  color: hsla(47, 100%, 50%, 1);
+
+}
+.amount sup {
+  font-size: 4rem;
+  line-height: 1.25;
+  position: relative;
+  left: 0.75rem;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: hsla(250, 4%, 31%, 1);
+  border-radius: 10px;
+  width: 43rem;
+  height: 0.9rem;
+  outline: none;
+  margin: 4.375rem 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 3.125rem;
+  height: 3.125rem;
+  background: hsla(341, 81%, 56%, 1);
+  border-radius: 50%;
+  cursor: pointer;
+  outline: 0.8rem solid hsla(341, 81%, 56%, .2);
+}
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 3.125rem;
+  height: 3.125rem;
+  background: hsla(341, 81%, 56%, 1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: 0.8rem solid hsla(341, 81%, 56%, .2);
+}
+
+input[type="range"]::-moz-range-progress {
+  background: hsla(341, 81%, 56%, 1);
+  box-shadow: 0px 2px 25px 0px hsla(341, 81%, 56%, 1);
+  border-radius: 10px;
+  height: 0.9rem;
+}
+
+button {
+  border-radius: 100px;
+  font-size: 2rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: hsla(255, 8%, 21%, 1);
+  color: hsla(0, 0%, 100%, 1);
+  border: none;
+  cursor: pointer;
+  letter-spacing: 3px;
+  padding: 2rem 3.125rem;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background: white;
+  color: black;
+}
