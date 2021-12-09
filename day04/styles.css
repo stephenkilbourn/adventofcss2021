@@ -1,3 +1,30 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Montserrat:wght@700&display=swap');
 
 @keyframes jiggle {
@@ -40,37 +67,94 @@ body {
 }
 
 .key {
-  background: #FFFFFF;
-  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
   border: none;
   border-radius: 16px;
   color: #60C1B6;
   cursor: pointer;
-  display: flex;
   font-family: 'Inter', sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
-  justify-content: center;
   min-width: 65px;
-  align-items: center;
-  padding: 18px 24px;
-  height: 65px;
-  box-sizing: border-box;
+  position: relative;
+  padding: 0;
 }
 
-.utility {
+.key:focus-visible {
+  outline: #60C1B6 solid 2px;
+  outline-offset: 4px;
+}
+
+.front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  background: white;
+  border-radius: 12px;
+  color: #60C1B6;
+  margin: 0;
+  padding: 18px 24px;
+  transform: translateY(-4px);
+  will-change: transform;
+  transition: transform 
+    600ms 
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 99%;
+  height: 4rem;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  transform: translateY(2px);
+  padding: 0;
+}
+
+.edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 99%;
+  height: 4rem;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 0;
+}
+
+.utility .front {
   color: #868888;
   flex: auto;
 }
 
-.key:hover {
-  background:  #ffd200;
-  color: black;
+.key:hover .front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.key:hover .shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.key:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.key:active .shadow {
+  transform: translateY(1px);
 }
 
 .jiggle {
   animation: jiggle 1s;
   animation-iteration-count: infinite;
-  background: #60c186;
-  color: white;
 }
