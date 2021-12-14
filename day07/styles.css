@@ -1,0 +1,187 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Roboto+Mono:wght@700&display=swap');
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: hsla(60, 14%, 96%, 1);
+  font-family: 'Roboto Mono', monospace;
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 0;
+}
+
+.wrapper {
+  background: white;
+  box-shadow: 0px 0px 44px rgba(148, 146, 120, 0.23);
+  border-radius: 20px;
+  width: 47rem;
+  padding-top: 55px;
+}
+
+.tip-amount,
+.total-per-person {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  width: 100%;
+}
+
+.tip-amount {
+  border-bottom: 1px solid #DEDEDE;
+  padding-bottom: 36px;
+  margin-bottom: 36px;
+}
+
+.total-per-person {
+  padding-bottom: 36px;
+}
+
+.tip-amount .dollars,
+.total-per-person .dollars {
+  font-family: 'Inter', sans-serif;
+  font-size: 5.125rem;
+  font-weight: 700;
+}
+
+.tip-amount sup,
+.total-per-person sup {
+  font-size: 3.375rem;;
+}
+
+.label {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.input-fields {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsla(0, 0%, 97%, 1);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 0 36px;
+}
+.bill-amount {
+  border-right: 2px solid hsla(0, 0%, 87%, 1);
+  padding: 65px 45px 45px;
+  width: 60%
+}
+
+.number-of-people {
+  padding: 65px 45px 45px;
+  width: 40%;
+
+}
+
+input[type="text"] {
+  text-align: center;
+  font-size: 3.875rem;
+  font-family: 'Inter', sans-serif;
+  border: none;
+  background: none;
+  width: 100%;
+  border-bottom: 3px dotted hsla(0, 0%, 70%, 1);
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+
+.bill-amount input[type="text"] {
+  background: url('./images/dollar.svg') left 12px no-repeat;
+}
+
+.number-of-people input[type="text"] {
+  background: url('./images/people.svg') left 20px no-repeat;
+  text-align: right;
+}
+
+.bill-amount .label {
+  text-align: center;
+}
+
+.tip-percentages {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: hsla(0, 0%, 93%, 1);
+  border-top: 1px solid #DEDEDE;
+  border-bottom: 1px solid #DEDEDE;
+  padding: 20px 35px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  background: hsla(0, 0%, 100%, 1);
+  border-radius: 16px;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
+  color: hsla(173, 44%, 57%, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4.25rem;
+  width: 8rem;
+  height: 4rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+background: hsla(173, 44%, 57%, 1);
+color: white;
+;
+}
+
+.button-wrapper {
+  text-align: right;
+  padding: 32px 40px; 
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsla(10, 80%, 65%, 1);
+  color: white;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-left: auto;
+  padding: 20px 100px;
+
+}

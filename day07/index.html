@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator || Advent of CSS - Day 7</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="tip-amount">
+      <div class="label">Tip Amount</div>
+      <div class="dollars"><sup>$</sup><span id="tip-amount"> 4.02</span></div>
+    </div>
+    <div class="total-per-person">
+      <div class="label">Total Per Person</div>
+      <div class="dollars"><sup>$</sup><span id="total-per-person">12.02</span></div>
+    </div>
+
+    <div class="input-fields">
+      <div class="bill-amount">
+        <div class="field">
+          <input type="text" id="bill-amount" name="bill-amount" value="102.02" maxlength="7"/>
+        </div>
+        <div class="label">Bill Amount</div>
+      </div>
+
+      <div class="number-of-people">
+        <div class="field">
+          <input type="text" id="number-of-people" name="number-of-people" value="3" maxlength="2"/>
+        </div>
+        <div class="label">Number of People</div>
+      </div>
+    </div>
+
+      <div class="tip-percentages">
+        <div>
+          <input type="radio" id="tip-5" name="tip-amount" value="5">
+          <label for="tip-5">5%</label>
+        </div>
+        <div>
+          <input type="radio" id="tip-10" name="tip-amount" value="10">
+          <label for="tip-10">10%</label>
+        </div>
+        <div>
+          <input type="radio" id="tip-15" checked name="tip-amount" value="15">
+          <label for="tip-15">15%</label>
+        </div>
+        <div>
+          <input type="radio" id="tip-20" name="tip-amount" value="20">
+          <label for="tip-20">20%</label>
+        </div>
+      </div>
+
+      <div class="button-wrapper">
+        <button id="calculate">Calculate</button>
+      </div>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
