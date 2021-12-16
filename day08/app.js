@@ -87,8 +87,6 @@ const updateUI = (weatherData) => {
   svgUse.height = iconNameToSizeMap[dayWeather.weatherType].height;
   svgUse.width = iconNameToSizeMap[dayWeather.weatherType].width;
 
-  console.log('size', dayWeather.weatherType, iconNameToSizeMap[dayWeather.weatherType].height, iconNameToSizeMap[dayWeather.weatherType].width)
-
   const temperature = barChildren[3]
   temperature.innerHTML = `
     ${dayWeather.maxTemp}
@@ -125,4 +123,3 @@ const loadData = async (key) => {
   const weatherData = await getWeatherData(key)
   updateUI(weatherData)
 }
-// loadData()
