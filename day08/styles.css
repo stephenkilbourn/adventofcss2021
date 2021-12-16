@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Oswald&display=swap');
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background: hsla(198, 63%, 95%, 1);
+  font-family: 'Krona One', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  background: hsla(198, 63%, 95%, 1);
+}
+
+body > svg {
+  position: absolute;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.day {
+  color: hsla(196, 60%, 56%, 1);
+  text-align: center;
+}
+.day-of-week {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.date {
+  font-size: 4.5rem;
+}
+
+.cloudy {
+  --background: hsla(196, 60%, 56%, 1);
+  --temperature: hsla(55, 62%, 74%, 1);
+  --content: hsla(196, 60%, 89%, 1);
+}
+
+.sunny {
+  --background: hsla(55, 62%, 74%, 1);
+  --temperature: hsla(196, 60%, 56%, 1);
+  --content: hsla(196, 60%, 35%, 1);
+}
+
+.stormy {
+  --background: hsla(196, 61%, 14%, 1);
+  --temperature: hsla(55, 62%, 74%, 1);
+  --content: hsla(196, 60%, 89%, 1);
+}
+
+.snowy {
+  --background: hsla(196, 61%, 84%, 1);
+  --temperature: hsla(196, 61%, 14%, 1);
+  --content: hsla(196, 60%, 35%, 1);
+}
+
+.partly-cloudy {
+  --background: hsla(196, 60%, 56%, 1);
+  --temperature: hsla(55, 62%, 74%, 1);
+  --content: hsla(196, 60%, 89%, 1);
+}
+
+.rainy {
+  --background: hsla(196, 60%, 42%, 1);
+  --temperature: hsla(55, 62%, 74%, 1);
+  --content: hsla(196, 60%, 89%, 1);
+}
+
+.bar {
+  background: var(--background);
+  color: white;
+  min-height: 525px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 11px 4px 34px rgba(32, 77, 92, 0.7);
+  border-radius: 50px;
+  padding-top: 200px;
+  position: relative;
+  width: 165px;
+}
+
+.weather svg {
+  position: absolute;
+}
+
+.cloudy .weather svg {
+  left: -25px;
+  top: 75px;
+}
+
+.sunny .weather svg {
+  left: -20px;
+  top: 15px;
+}
+
+.stormy .weather svg {
+  left: -20px;
+  top: 30px;
+}
+
+.snowy .weather svg {
+  left: -25px;
+  top: 20px;
+}
+
+.partly-cloudy .weather svg {
+  left: -25px;
+  top: 20px;
+}
+
+.rainy .weather svg {
+  left: 30px;
+  top: -15px;
+}
+
+.temperature {
+  color: var(--temperature);
+  font-size: 6.875rem;
+  font-family: 'Oswald', sans-serif;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.degrees {
+  position: absolute;
+  font-size: 3rem;
+  top: 5px;
+}
+
+.content {
+  font-size: 1rem;
+  color: var(--content);
+  fill: currentColor;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  position: relative;
+  top: 10px;
+}
+
+.precipitation {
+  margin-bottom: 10px;
+}
+
+.low .icon {
+  position: relative;
+  left: -5px;
+  margin-right: -4px;;
+}
+
