@@ -1,0 +1,292 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap');
+* {
+	box-sizing: border-box;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+:root {
+	--red: #b41d1d;
+	--red-2: #b41d1d;
+	--red-dark-shade: #9b181d;
+	--black: #222;
+	--green: #024c46;
+	--green-2: #507524;
+	--green-3: #578521;
+	--gold: #bea35c;
+	--gold-dark: #ae9145;
+	--beige: #f2e7d1;
+	--beige-dark-shade: #dfceab;
+	--blue-dark: #404148;
+	--blue: #5cb9be;
+}
+
+body {
+	background: whitesmoke;
+	font-family: 'Mountains of Christmas', cursive;
+  font-weight: 700;
+	padding: 2%;
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw; */
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.01%;
+  position: relative;
+  padding: 0 5rem;
+  margin: 2rem auto 0;
+  max-width: 70rem;
+}
+
+.square {
+	background: #999;
+	width: 100%;
+	height: 100%;
+	min-width: 3rem;
+	border-radius: 3px;
+	border: 2px solid var(--black);
+	box-shadow: inset -7px 0 9px -7px rgba(0, 0, 0, 0.4),
+		inset 0 -7px 9px -7px rgba(0, 0, 0, 0.4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+
+span {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  display: flex;
+  background: var(--red);
+  color: var(--beige);
+  color: var(--beige);
+  box-shadow: 0 0 0 1px var(--beige), 0 0 0 4px var(--red);
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center;
+  /* transform: translateY(0.4rem); */
+}
+
+span:before {
+  content: "";
+  display: block;
+  padding-bottom: calc(100% + 65px);
+  /* padding-bottom: 100%; */
+}
+span:after {
+  content: "";
+  border-radius: 0 0 5rem 5rem;
+  width: 40%;
+  height: 20%;
+  background: linear-gradient(var(--gold-dark), var(--beige-dark-shade));
+  position: absolute;
+  top: 0;
+}
+
+@media (min-width: 37rem ) {
+  main {
+  grid-template-columns: repeat(12, 1fr);
+  margin-top: 8rem;
+  }
+  .square:nth-child(1) {
+    grid-column: 6 / 8;
+  }
+  .square:nth-child(2) {
+    grid-row: 2;
+    grid-column: 5 / 7;
+  }
+  .square:nth-child(3) {
+    grid-row: 2;
+    grid-column: 7 / 9;
+  }
+  .square:nth-child(4) {
+    grid-row: 3;
+    grid-column: 4 / 6;
+  }
+  .square:nth-child(5) {
+    grid-row: 3;
+    grid-column: 6 / 8;
+  }
+  .square:nth-child(6) {
+    grid-row: 3;
+    grid-column: 8 / 10;
+  }
+  .square:nth-child(7) {
+    grid-row: 4;
+    grid-column: 3 / 5;
+  }
+  .square:nth-child(8) {
+    grid-row: 4;
+    grid-column: 5 / 7;
+  }
+  .square:nth-child(9) {
+    grid-row: 4;
+    grid-column: 7 / 9;
+  }
+  .square:nth-child(10) {
+    grid-row: 4;
+    grid-column: 9 / 11;
+  }
+  .square:nth-child(11) {
+    grid-row: 5;
+    grid-column: 2 / 4;
+  }
+  .square:nth-child(12) {
+    grid-row: 5;
+    grid-column: 4 / 6;
+  }
+  .square:nth-child(13) {
+    grid-row: 5;
+    grid-column: 6 / 8;
+  }
+  .square:nth-child(14) {
+    grid-row: 5;
+    grid-column: 8 / 10;
+  }
+  .square:nth-child(15) {
+    grid-row: 5;
+    grid-column: 10 / 12;
+  }
+  .square:nth-child(16) {
+    grid-row: 6;
+    grid-column: 1 / 3;
+  }
+  .square:nth-child(17) {
+    grid-row: 6;
+    grid-column: 3 / 5;
+  }
+  .square:nth-child(18) {
+    grid-row: 6;
+    grid-column: 5 / 7;
+  }
+  .square:nth-child(19) {
+    grid-row: 6;
+    grid-column: 7 / 9;
+  }
+  .square:nth-child(20) {
+    grid-row: 6;
+    grid-column: 9 / 11;
+  }
+  .square:nth-child(21) {
+    grid-row: 6;
+    grid-column: 11 / 13;
+  }
+  .square:nth-child(22) {
+    grid-row: 7;
+    grid-column: 4 / 6;
+  }
+  .square:nth-child(23) {
+    grid-row: 7;
+    grid-column: 6 / 8;
+  }
+  .square:nth-child(24) {
+    grid-row: 7;
+    grid-column: 8 / 10;
+  }
+  
+  .square {
+    grid-column: span 2;
+  }
+
+  span {
+    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 5.3vw, 4rem);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+/*  Wrapping paper colors */
+
+.square:nth-child(2),
+.square:nth-child(7),
+.square:nth-child(10),
+.square:nth-child(18) {
+		background-image: linear-gradient(
+				to right,
+				rgba(255, 255, 255, 0.4) 1rem,
+				rgba(209, 209, 209, 0.3) 1rem
+			),
+			linear-gradient(to bottom, #ffa4a4 1rem, #c53f3f 1rem);
+		background-size: 2rem 2rem;
+		background-repeat: repeat;
+	}
+
+  .square:nth-child(3),
+  .square:nth-child(9),
+	.square:nth-child(11),
+  .square:nth-child(14),
+	.square:nth-child(19),
+  .square:nth-child(22) {
+		background: var(--green-2);
+		background-image: radial-gradient(#fff 15%, transparent 18%),
+			radial-gradient(#fff 15%, transparent 18%);
+		background-size: 16px 16px;
+		background-position: 4px 4px, 12px 12px;
+	}
+
+.square:nth-child(1),
+.square:nth-child(4n),
+.square:nth-child(6),
+.square:nth-child(15) {
+  background: var(--red);
+  background-image: linear-gradient(
+      to bottom,
+      transparent 55%,
+      rgba(0, 0, 0, 0.1) 60%,
+      var(--gold) 60%,
+      var(--gold-dark) 80%,
+      rgba(0, 0, 0, 0.1) 80%,
+      transparent 85%
+    ),
+    linear-gradient(
+      to right,
+      transparent 20%,
+      rgba(0, 0, 0, 0.1) 25%,
+      var(--gold) 25%,
+      var(--gold-dark) 45%,
+      rgba(0, 0, 0, 0.1) 45%,
+      transparent 50%
+    );
+  background-size: 100%;
+  background-position: 0;
+}
+
+.square:nth-child(5),
+.square:nth-child(13),
+.square:nth-child(17),
+.square:nth-child(21),
+.square:nth-child(23) {
+		background: #fff;
+		background-image: linear-gradient(
+			to right,
+			transparent 30%,
+			var(--gold) 30%,
+			var(--gold) 45%,
+			transparent 45%,
+			transparent 55%,
+			var(--gold) 55%,
+			var(--gold) 62%,
+			transparent 62%,
+			transparent 70%,
+			var(--gold) 70%,
+			var(--gold) 78%,
+			transparent 78%,
+			transparent 85%,
+			var(--gold) 85%
+		);
+		background-size: 26px;
+		background-position: 4px;
+	}
