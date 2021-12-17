@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap');
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsla(0, 0%, 100%, 1);
+  color: hsla(0, 0%, 0%, 1);
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  max-width: 80ch;
+  max-width: 1010px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 75px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.question {
+  font-size: 1.5rem;
+  font-weight: 800; 
+  background: white;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  padding: 25px 38px;
+  /* shift to the right of black box */
+  padding-left: 130px;
+  position: relative;
+  width: calc(100% - 55px);
+  box-sizing: border-box;
+}
+
+.question:before {
+  content: '';
+  display: block;
+  background: black;
+  width: 102px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.question:after {
+  content: '';
+  height: calc(100% + 15px);
+  width: 100%;
+  position: absolute;
+  right: -55px;
+  top: 20px;
+  background: hsla(0, 0%, 94%, 1) url(./images/chevron.svg) calc(100% - 12px) 20px no-repeat;
+  z-index: -1;
+  transition: 500ms ease-in-out background-color;
+}
+
+a:hover .question:after {
+  background-color: hsla(52, 100%, 50%, 1);
+}
+
+.expand .question:after {
+  background: hsla(52, 100%, 50%, 1) url(./images/close.svg) calc(100% - 12px) 20px no-repeat;
+}
+
+.question-mark {
+  position: absolute;
+  left: 10px;
+  top: -45px;
+}
+
+.answer {
+  background: hsla(0, 0%, 94%, 1);
+  height: 0;
+  overflow: hidden;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+  transition: 500ms ease-in-out height, 500ms ease-in-out background-color;
+  width: calc(100% - 60px);
+  /* shift left because of question mark */
+  margin-left: 55px;
+
+  box-sizing: border-box;
+}
+
+.answer .padding {
+  padding: 30px 75px;
+}
+
+.expand .answer{
+  background: hsla(52, 100%, 50%, 1);
+  transition: 300ms ease-in-out height, 300ms ease-in-out background-color;
+}
