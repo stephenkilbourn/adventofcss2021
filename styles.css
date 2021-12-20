@@ -205,6 +205,10 @@ span:after {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 /*  Wrapping paper colors */
 
 /* red with gold ribbon style */
@@ -260,8 +264,8 @@ span:after {
       background-image: linear-gradient(
         to right,
         transparent 30%,
-        var(--dark-blue) 30%,
-        var(--dark-blue) 45%,
+        var(--blue-dark) 30%,
+        var(--blue-dark) 45%,
         transparent 45%,
         transparent 55%,
         var(--blue-light) 55%,
@@ -289,12 +293,151 @@ span:after {
 );
   }
 
-  
-  a {
-    text-decoration: none;
+  a:link {
+    color: var(--light-coral);
   }
+  
   /* visited link */
-  a:link,
   a:visited {
     color: var(--light-coral)
   }
+
+  .snow {
+    --size: 1vw;
+    --left-ini: 1vw;
+    --left-end: 2vw;
+    width: var(--size);
+    height: var(--size);
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: -5vh;
+    left: 2vh;
+    animation: snowfall 10s linear infinite;
+  }
+
+  .snow:nth-child(2) {
+    --size:  0.5vw;
+    --left-ini: 15vw;
+    --left-end: 5vw;
+    left: 10vw;
+    animation: snowfall 10s linear infinite;
+    animation-delay: 3s;
+}
+
+.snow:nth-child(3) {
+  --size:  1.25vw;
+  --left-ini: 15vw;
+  --left-end: 14vw;
+  left: 10vw;
+  animation: snowfall 9s linear infinite;
+  animation-delay: 8s;
+  filter: blur(1px)
+}
+.snow:nth-child(4) {
+  --size:  1.25vw;
+  --left-ini: 15vw;
+  --left-end: 14vw;
+  left: 30vw;
+  animation: snowfall 10s linear infinite;
+  animation-delay: 1s;
+}
+
+.snow:nth-child(5) {
+  --size:  0.5vw;
+  --left-ini: 25vw;
+  --left-end: 15vw;
+  left: 20vw;
+  animation: snowfall 12s linear infinite;
+  animation-delay: 4s;
+}
+
+.snow:nth-child(6) {
+  --size:  0.5vw;
+  --left-ini: 20vw;
+  --left-end: 15vw;
+  left: 7vw;
+  animation: snowfall 8s linear infinite;
+  animation-delay: 4s;
+  filter: blur(1px)
+}
+
+.snow:nth-child(7) {
+  --size:  0.65vw;
+  --left-ini: 15vw;
+  --left-end: 5vw;
+  right: 10vw;
+  animation: snowfall 10s linear infinite;
+}
+
+.snow:nth-child(8) {
+--size:  1.25vw;
+--left-ini: 90vw;
+--left-end: 64vw;
+right: 10vw;
+animation: snowfall 9s linear infinite;
+animation-delay: 8s;
+}
+.snow:nth-child(9) {
+--size:  1.25vw;
+--left-ini: 95vw;
+--left-end: 84vw;
+right: 30vw;
+animation: snowfall 10s linear infinite;
+filter: blur(1px)
+}
+
+.snow:nth-child(10) {
+--size:  0.4vw;
+--left-ini: 85vw;
+--left-end: 75vw;
+right: 20vw;
+animation: snowfall 7s linear infinite;
+animation-delay: 1s;
+}
+
+.snow:nth-child(11) {
+--size:  1.15vw;
+--left-ini: 70vw;
+--left-end: 65vw;
+right: 7vw;
+animation: snowfall 9.5s linear infinite;
+animation-delay: 4s;
+filter: blur(2px)
+}
+
+.snow:nth-child(12) {
+  --size:  0.55vw;
+  --left-ini: 70vw;
+  --left-end: 65vw;
+  right: 7vw;
+  animation: snowfall 10s linear infinite;
+  }
+
+.snow:nth-child(13) {
+  --size:  0.25vw;
+  --left-ini: 50vw;
+  --left-end: 45vw;
+  right: 7vw;
+  animation: snowfall 10s linear infinite;
+  animation-delay: 1.75s;
+  }
+
+  .snow:nth-child(13) {
+    --size:  0.45vw;
+    --left-ini: 60vw;
+    --left-end: 55vw;
+    right: 25%;
+    animation: snowfall 9.5s linear infinite;
+    animation-delay: 1.5s;
+  }
+
+@keyframes snowfall {
+  0% {
+    transform: translate3d(var(--left-ini), 0, 0);
+  }
+  100% {
+    transform: translate3d(var(--left-end), 110vh, 0);
+  }
+}
+
