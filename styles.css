@@ -9,31 +9,34 @@ input, button, textarea, select {
 }
 
 :root {
-	--red: #b41d1d;
-	--red-2: #b41d1d;
-	--red-dark-shade: #9b181d;
-	--black: #222;
-	--green: #024c46;
-	--green-2: #507524;
-	--green-3: #578521;
 	--gold: #bea35c;
 	--gold-dark: #ae9145;
-	--beige: #f2e7d1;
-	--beige-dark-shade: #dfceab;
-	--blue-dark: #404148;
-	--blue: #5cb9be;
+
+
+  --pink: #FEEEE6;
+  --light-coral: #F08080;
+  --pink-dark: #F48184;
+  --red-dark: #ad2711;
+  --goldenrod: #DBA505;
+  --green-light: #F2F0DB;
+  --dark-green: #243902;
+  --green-medium: #507011;
+  --blue-light: #B1BDD5;
+  --blue-dark: #30405A;
+  --sumac: #E58B25;
 }
 
 body {
-	background: whitesmoke;
+  background: var(--pink);
 	font-family: 'Mountains of Christmas', cursive;
   font-weight: 700;
-	padding: 2%;
-  /* display: flex;
+	padding: 0;
+  margin: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  min-width: 100vw; */
+  min-width: 100vw; 
 }
 
 main {
@@ -41,8 +44,8 @@ main {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 0.01%;
   position: relative;
-  padding: 0 5rem;
-  margin: 2rem auto 0;
+  padding: 0 0;
+  margin: 0;
   max-width: 70rem;
 }
 
@@ -50,9 +53,9 @@ main {
 	background: #999;
 	width: 100%;
 	height: 100%;
-	min-width: 3rem;
+	min-width: 7rem;
 	border-radius: 3px;
-	border: 2px solid var(--black);
+  border: none;
 	box-shadow: inset -7px 0 9px -7px rgba(0, 0, 0, 0.4),
 		inset 0 -7px 9px -7px rgba(0, 0, 0, 0.4);
 	display: flex;
@@ -65,10 +68,9 @@ main {
 span {
   font-size: clamp(1.8rem, 5vw, 2.8rem);
   display: flex;
-  background: var(--red);
-  color: var(--beige);
-  color: var(--beige);
-  box-shadow: 0 0 0 1px var(--beige), 0 0 0 4px var(--red);
+  background: var(--blue-light);
+  color: var(--green-light);
+  box-shadow: 0 0 0 1px var(--green-light), 0 0 0 3px var(--goldenrod);
   width: 50%;
   height: 50%;
   border-radius: 100%;
@@ -81,14 +83,13 @@ span:before {
   content: "";
   display: block;
   padding-bottom: calc(100% + 65px);
-  /* padding-bottom: 100%; */
 }
 span:after {
   content: "";
   border-radius: 0 0 5rem 5rem;
   width: 40%;
   height: 20%;
-  background: linear-gradient(var(--gold-dark), var(--beige-dark-shade));
+  background: linear-gradient(var(--dark-blue), var(--blue-light));
   position: absolute;
   top: 0;
 }
@@ -96,7 +97,7 @@ span:after {
 @media (min-width: 37rem ) {
   main {
   grid-template-columns: repeat(12, 1fr);
-  margin-top: 8rem;
+  margin-top: 1rem;
   }
   .square:nth-child(1) {
     grid-column: 6 / 8;
@@ -204,89 +205,96 @@ span:after {
   }
 }
 
-a {
-  text-decoration: none;
-}
-
 /*  Wrapping paper colors */
 
-.square:nth-child(2),
-.square:nth-child(7),
-.square:nth-child(10),
-.square:nth-child(18) {
-		background-image: linear-gradient(
-				to right,
-				rgba(255, 255, 255, 0.4) 1rem,
-				rgba(209, 209, 209, 0.3) 1rem
-			),
-			linear-gradient(to bottom, #ffa4a4 1rem, #c53f3f 1rem);
-		background-size: 2rem 2rem;
-		background-repeat: repeat;
+/* red with gold ribbon style */
+  .square {
+    background: var(--blue-light);
+    background-image: linear-gradient(
+        to bottom,
+        transparent 55%,
+        rgba(0, 0, 0, 0.1) 60%,
+        var(--red-dark) 60%,
+        var(--light-coral) 80%,
+        rgba(0, 0, 0, 0.1) 80%,
+        transparent 85%
+      ),
+      linear-gradient(
+        to right,
+        transparent 20%,
+        rgba(0, 0, 0, 0.1) 25%,
+        var(--light-coral) 25%,
+        var(--red-dark) 45%,
+        rgba(0, 0, 0, 0.1) 45%,
+        transparent 50%
+      );
+    background-size: 100%;
+    background-position: 0;
+  }
+
+/* checkerboard styles */
+  .square:nth-child(2n) {
+      background-image: linear-gradient(
+          to right,
+          rgba(177,189,213, 0.4) 1rem,
+          rgba(177,189,213, 0.3) 1rem
+        ),
+        linear-gradient(to bottom, var(--blue-dark) 1rem, var(--pink-dark) 1rem);
+      background-size: 2rem 2rem;
+      background-repeat: repeat;
 	}
 
-  .square:nth-child(3),
-  .square:nth-child(9),
-	.square:nth-child(11),
-  .square:nth-child(14),
-	.square:nth-child(19),
-  .square:nth-child(22) {
-		background: var(--green-2);
-		background-image: radial-gradient(#fff 15%, transparent 18%),
-			radial-gradient(#fff 15%, transparent 18%);
+  /* Green dots style */
+  .square:nth-child(3n) {
+		background: var(--green-medium);
+		background-image: radial-gradient(var(--dark-green) 35%, transparent 18%),
+			radial-gradient(var(--dark-green) 15%, transparent 18%);
 		background-size: 16px 16px;
 		background-position: 4px 4px, 12px 12px;
 	}
 
-.square:nth-child(1),
-.square:nth-child(4n),
-.square:nth-child(6),
-.square:nth-child(15) {
-  background: var(--red);
-  background-image: linear-gradient(
-      to bottom,
-      transparent 55%,
-      rgba(0, 0, 0, 0.1) 60%,
-      var(--gold) 60%,
-      var(--gold-dark) 80%,
-      rgba(0, 0, 0, 0.1) 80%,
-      transparent 85%
-    ),
-    linear-gradient(
-      to right,
-      transparent 20%,
-      rgba(0, 0, 0, 0.1) 25%,
-      var(--gold) 25%,
-      var(--gold-dark) 45%,
-      rgba(0, 0, 0, 0.1) 45%,
-      transparent 50%
-    );
-  background-size: 100%;
-  background-position: 0;
-}
 
-.square:nth-child(5),
-.square:nth-child(13),
-.square:nth-child(17),
-.square:nth-child(21),
-.square:nth-child(23) {
-		background: #fff;
-		background-image: linear-gradient(
-			to right,
-			transparent 30%,
-			var(--gold) 30%,
-			var(--gold) 45%,
-			transparent 45%,
-			transparent 55%,
-			var(--gold) 55%,
-			var(--gold) 62%,
-			transparent 62%,
-			transparent 70%,
-			var(--gold) 70%,
-			var(--gold) 78%,
-			transparent 78%,
-			transparent 85%,
-			var(--gold) 85%
-		);
-		background-size: 26px;
-		background-position: 4px;
+/* Stripes style */
+  .square:nth-child(5n) {
+      background: var(--light-coral);
+      background-image: linear-gradient(
+        to right,
+        transparent 30%,
+        var(--dark-blue) 30%,
+        var(--dark-blue) 45%,
+        transparent 45%,
+        transparent 55%,
+        var(--blue-light) 55%,
+        var(--blue-light) 62%,
+        transparent 62%,
+        transparent 70%,
+        var(--blue-light) 70%,
+        var(--blue-light) 78%,
+        transparent 78%,
+        transparent 85%,
+        var(--blue-light) 85%
+      );
+      background-size: 26px;
+      background-position: 4px;
 	}
+
+  /* Horizontal stripes style */
+  .square:nth-child(7n) {
+  background: repeating-linear-gradient(
+  45deg,
+  var(--goldenrod),
+  var(--goldenrod) 10px,
+  var(--red-dark) 10px,
+  var(--red-dark) 11px
+);
+  }
+
+  
+  a {
+    text-decoration: none;
+  }
+  /* visited link */
+  a:link,
+  a:visited {
+    color: var(--light-coral)
+  }
