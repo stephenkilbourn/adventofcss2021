@@ -23,10 +23,15 @@ h1 {
 ul {
   list-style-type: none;
   display: flex;
-  gap: 75px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
   margin:  0;
   padding: 0;
 }
+
+
 
 li button {
   display: flex;
@@ -38,8 +43,8 @@ li button {
   box-sizing: border-box;
   cursor: pointer;
   font-size: 1.25rem;
-  height: 355px;
-  width: 325px;
+  height: 155px;
+  width: 125px;
 }
 
 li button:hover {
@@ -47,20 +52,42 @@ li button:hover {
 }
 
 li img {
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+@media (min-width: 37rem) {
+  ul {
+    flex-direction: row;
+    gap: 75px;
+  }
+
+  li button {
+    height: 355px;
+    width: 325px;
+  }
+
+  li img {
+    max-width: 250px;
+    max-height: 250px;
+  }
 }
 
 /* winner page styles */
 
+body.winner img {
+  max-width: 150px;
+  max-height: 150px;
+}
+
 body.winner.you-win{
   background: url('./images/you-win.svg') left top no-repeat;
-  background-size: auto 100%;
+  background-size: auto 50%;
 }
 
 body.winner.computer-wins{
-  background: url('./images/computer-wins.svg') right top no-repeat;
-  background-size: auto 100%;
+  background: url('./images/computer-wins.svg') right bottom no-repeat;
+  background-size: auto 50%;
 }
 
 body.you-win h1.computer-wins,
@@ -71,7 +98,10 @@ body.computer-wins h1.you-win {
 
 body.winner .wrapper {
   display: flex;
-  gap: 200px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
   position: relative;
 }
 
@@ -84,11 +114,6 @@ body.winner .computer-pick img{
 }
 
 .play-again {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  /* center button instead of left align */
-  transform: translateX(-50%);
   font-family: 'Roboto Mono', monospace;
   font-size: 2rem;
   cursor: pointer;
@@ -100,4 +125,36 @@ body.winner .computer-pick img{
 .play-again:hover {
   background-color: black;
   color: whitesmoke;
+}
+
+@media (min-width: 37rem) {
+  body.winner.you-win{
+    background: url('./images/you-win.svg') left top no-repeat;
+    background-size: auto 100%;
+  }
+
+  body.winner.computer-wins{
+    background: url('./images/computer-wins.svg') right top no-repeat;
+    background-size: auto 100%;
+  }
+
+  body.winner .wrapper {
+    flex-direction: row;
+    gap: 200px;
+    position: relative;
+  }
+
+  .play-again {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    /* center button instead of left align */
+    transform: translateX(-50%);
+  }
+
+  body.winner img {
+    max-width: revert;
+    max-height: revert;
+  }
+
 }
