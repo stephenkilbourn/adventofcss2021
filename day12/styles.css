@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+}
+
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 75px;
+  margin:  0;
+  padding: 0;
+}
+
+li button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: none;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 1.25rem;
+  height: 355px;
+  width: 325px;
+}
+
+li button:hover {
+  border: 13px solid #FFB800;
+}
+
+li img {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+/* winner page styles */
+
+body.winner.you-win{
+  background: url('./images/you-win.svg') left top no-repeat;
+  background-size: auto 100%;
+}
+
+body.winner.computer-wins{
+  background: url('./images/computer-wins.svg') right top no-repeat;
+  background-size: auto 100%;
+}
+
+body.you-win h1.computer-wins,
+body.computer-wins h1.you-win {
+  visibility: hidden;
+}
+
+
+body.winner .wrapper {
+  display: flex;
+  gap: 200px;
+  position: relative;
+}
+
+body.winner img {
+  mix-blend-mode: multiply;
+}
+
+body.winner .computer-pick img{
+  transform: scaleX(-1);
+}
+
+.play-again {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  /* center button instead of left align */
+  transform: translateX(-50%);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2rem;
+  cursor: pointer;
+  border: 2px solid black;
+  background: none;
+  padding: 15px 85px;
+}
+
+.play-again:hover {
+  background-color: black;
+  color: whitesmoke;
+}
