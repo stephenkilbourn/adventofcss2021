@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&family=Roboto:wght@400;700&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: #E5E5E5;
+  font-family: 'Roboto', sans-serif; 
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(30px, 1fr));
+  background: #FFFFFF;
+  box-shadow: 0px 2.3128px 39.3176px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+  max-width: 45rem;
+  padding: 25px 25px;
+  grid-gap: 10px;
+  width: 90%;
+}
+
+button {
+  background: none;
+  border: none;
+}
+.month {
+  grid-column: span 5;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+}
+
+div {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  justify-content: center;
+  min-height: 2.5rem;
+  min-width: 2.5rem;
+
+}
+
+.day-of-week {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.today {
+  background: hsla(49, 100%, 50%, 1);
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+}
+
+@media (min-width: 50rem) {
+  .wrapper {
+    grid-template-columns: repeat(7, minmax(60px, 1fr));
+    padding: 55px 100px;
+    grid-gap: 10px;
+    width: revert;
+  }
+
+  .month {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  
+  div {
+    font-size: 1.5rem;
+    min-height: 3.75rem;
+  }
+
+  .today {
+    height: 3.75rem;
+    width: 3.75rem;
+  }
+}
