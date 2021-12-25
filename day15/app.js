@@ -1,5 +1,5 @@
 
-// const YOUR_API_KEY = '[key]'
+const YOUR_API_KEY = null
 
 const featureTitle = document.querySelector('.feature > h1')
 const featureDescription = document.querySelector('.feature > p')
@@ -7,13 +7,20 @@ const featureDescription = document.querySelector('.feature > p')
  const galleryElement = document.querySelector('.gallery')
 
 const loadVideos = async () => {
-  try {
-    const res = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${YOUR_API_KEY}&channelId=UC-T8W79DN6PBnzomelvqJYw&part=snippet,id&order=date&maxResults=20`)
+  if(YOUR_API_KEY ) {
+    try {
+      const res = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${YOUR_API_KEY}&channelId=UC-T8W79DN6PBnzomelvqJYw&part=snippet,id&order=date&maxResults=20`)
+      const {items} = await res.json()
+      return items
+    } catch(err) {
+      console.error(error)
+    }
+  } else {
+    const res = await fetch('./sampleData.json')
     const {items} = await res.json()
     return items
-  } catch(err) {
-    console.error(error)
   }
+
 }
 
 const displayVideos = async () => {
