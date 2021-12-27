@@ -46,6 +46,7 @@ main {
   position: relative;
   padding: 100px 0;
   margin: 0;
+  padding-top: 200px;
   max-width: 70rem;
 }
 
@@ -240,10 +241,15 @@ header {
   position: absolute;
   top: 15px;
   width: 100%;
-  height: 50px;
+  height: 100px;
   text-align: center;
   font-size: 3rem;
   color: var(--blue-dark);
+}
+
+header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 150px;
 }
 
 /*  Wrapping paper colors */

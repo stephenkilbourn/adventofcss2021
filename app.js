@@ -25,7 +25,10 @@ const indexToDayDescriptionMap = {
 dayBoxes.forEach((key, i) => {
   key.dataset.index = i + 1
   key.addEventListener('mouseenter', (e) => {
-    showInfo(i)
+    if (i < 15) {
+      showInfo(i)
+    }
+
   })
   key.addEventListener('mouseleave', (e) => {
     hideInfo(i)
