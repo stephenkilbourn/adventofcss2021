@@ -30,28 +30,26 @@ body {
   background: var(--pink);
 	font-family: 'Mountains of Christmas', cursive;
   font-weight: 700;
-	padding: 0;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   min-width: 100vw; 
-  overflow: hidden;
+  overflow: scroll;
 }
 
 main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.01%;
+  grid-gap: 0.02%;
   position: relative;
-  padding: 0 0;
+  padding: 100px 0;
   margin: 0;
   max-width: 70rem;
 }
 
 .square {
-	background: #999;
 	width: 100%;
 	height: 100%;
 	min-width: 7rem;
@@ -77,7 +75,6 @@ span {
   border-radius: 100%;
   align-items: center;
   justify-content: center;
-  /* transform: translateY(0.4rem); */
 }
 
 span:before {
@@ -85,21 +82,40 @@ span:before {
   display: block;
   padding-bottom: calc(100% + 65px);
 }
-span:after {
-  content: "";
-  border-radius: 0 0 5rem 5rem;
-  width: 40%;
-  height: 20%;
-  background: linear-gradient(var(--dark-blue), var(--blue-light));
-  position: absolute;
-  top: 0;
-}
+
 
 @media (min-width: 37rem ) {
+  header {
+    padding-top: 50px;
+  }
   main {
   grid-template-columns: repeat(12, 1fr);
-  margin-top: 1rem;
+  margin-top: 50px;
   }
+
+  .overlay {
+    display: none;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 250px;
+    height: auto;
+    top: 15%;
+    right: 10%;
+  }
+
+  .overlay .thumbnail {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+  
+  }
+  
+  .overlay .caption {
+    font-size: 2rem;
+    text-align: center;
+  }
+
   .square:nth-child(1) {
     grid-column: 6 / 8;
   }
@@ -208,6 +224,26 @@ span:after {
 
 a {
   text-decoration: none;
+  outline: none;
+}
+
+a:link {
+  color: var(--light-coral);
+}
+
+/* visited link */
+a:visited {
+  color: var(--light-coral)
+}
+
+header {
+  position: absolute;
+  top: 15px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 3rem;
+  color: var(--blue-dark);
 }
 
 /*  Wrapping paper colors */
@@ -294,14 +330,7 @@ a {
 );
   }
 
-  a:link {
-    color: var(--light-coral);
-  }
-  
-  /* visited link */
-  a:visited {
-    color: var(--light-coral)
-  }
+
 
   .snow {
     --size: 1vw;
@@ -442,3 +471,82 @@ filter: blur(2px)
   }
 }
 
+
+.square {
+  perspective: 500px;
+}
+
+.front,
+.back {
+  transition: transform 400ms;
+  will-change: transform;
+  backface-visibility: hidden;
+  /* Vendor prefix for Safari */
+  -webkit-backface-visibility: hidden;
+}
+
+.card .front,
+.card .front {
+  transform: rotateY(0deg);
+  transition: transform 1.1s;
+}
+
+.card:hover .front,
+.card:focus .front {
+  transform: rotateY(180deg);
+}
+
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(-180deg);
+  transition: transform 1s;
+}
+
+.back img {
+  width: 100%;
+  height: 100%; 
+  object-fit: contain;
+  border-radius: 15px;
+  opacity: .95;
+  transform: scale(0);
+  transform-origin: 40% 50%;
+  animation: shrink 500ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.card:hover .back,
+.card:focus .back {
+  transform: rotateY(0deg);
+  transition: transform 500ms;
+}
+
+.card:hover img,
+.card:focus img {
+  animation: grow 500ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 400ms;
+}
+
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
