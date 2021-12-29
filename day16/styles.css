@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px;
+  align-content: center;
+}
+
+a {
+  display: block;
+}
+
+svg {
+  stroke: grey;
+  stroke-width: 4px;
+}
+
+a[class^="star-"]:hover svg,
+a[class^="star-"]:hover~ a svg{
+    fill: #FFD200;
+    stroke-width: 0px;
+}

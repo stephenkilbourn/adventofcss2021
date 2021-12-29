@@ -19,23 +19,21 @@ const indexToDayDescriptionMap = {
   11: "Rock Paper Scissors",
   12: "Modals",
   13: "Date Picker",
-  14: "Video Playlist"
+  14: "Video Playlist",
+  15: "Star Rating",
+  16: "Table of Contents"
 }
 
 dayBoxes.forEach((key, i) => {
   key.dataset.index = i + 1
   key.addEventListener('mouseenter', (e) => {
-    if (i < 15) {
       showInfo(i)
-    }
-
   })
   key.addEventListener('mouseleave', (e) => {
     hideInfo(i)
   })
 })
 
-console.log('caption: ', thumbnail)
 
 const showInfo = (index) => {
   thumbnail.src = `./images/day${index + 1}.jpg`
