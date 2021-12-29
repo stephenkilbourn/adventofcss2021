@@ -8,7 +8,7 @@ window.addEventListener('scroll', () => {
 const updateSideBar = () => {
   for (let index = 0; index < h3Headers.length; index++) {
     const header = h3Headers[index]
-    if(elementInView(header)) {
+    if(elementInView(header, 0)) {
       sidebarLinks.forEach( link => link.classList.remove('selected'))
       sidebarLinks[index].classList.add('selected')
       break;
@@ -17,7 +17,7 @@ const updateSideBar = () => {
   }
 }
 
-const elementInView = (element) => {
+const elementInView = (element, offset = 100) => {
   const elementTop = element.getBoundingClientRect().top
-  return elementTop > 0 && elementTop <= window.innerHeight
+  return elementTop >= 0 && elementTop <= (window.innerHeight - offset);
 }
