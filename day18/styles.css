@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;700&display=swap');
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsla(150, 27%, 96%, 1);
+  color: hsla(315, 9%, 18%, 1);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+}
+
+.fields {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+input[type=text] {
+  box-sizing: border-box;
+  color: black;
+  font-size: 2rem;
+  font-family: 'Roboto Mono', monospace;
+  line-height: 2.625rem;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 24px #CADBD2;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  margin-right: 18px;
+  padding: 0 40px;
+  height: 100px;
+  width: 600px;
+}
+
+.copy {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  color: hsla(186, 23%, 59%, 1);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  /* match input's height and center*/
+  height: 100px;
+  margin-bottom: 40px;
+  /* prevent sift when removing text */
+  min-width: 140px;
+}
+
+.copy span {
+  display: none;
+}
+
+.copy.copied span {
+  display: block;
+}
+
+.copy.copied {
+  font-weight: bold;
+  color: hsla(138, 34%, 44%, 1);
+
+}
+
+.copy svg {
+  fill: currentColor;
+  margin-right: 5px;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 385px;
+  margin-right: 35px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 35px;
+  width: 35px;
+  background: hsla(186, 23%, 59%, 1);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  top: -12px;
+}
+
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 35px;
+  width: 35px;
+  background: hsla(186, 23%, 59%, 1);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  top: -12px;
+}
+
+input[type=range]::-ms-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 35px;
+  width: 35px;
+  background: hsla(186, 23%, 59%, 1);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  top: -12px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  background: hsla(186, 24%, 85%, 1);
+  border-radius: 4px;
+  height: 10px;
+  width: 100%;
+}
+
+input[type=range]::-moz-range-track {
+  background: hsla(186, 24%, 85%, 1);
+  border-radius: 4px;
+  height: 10px;
+  width: 100%;
+}
+
+input[type=range]::-ms-track {
+  background: hsla(186, 24%, 85%, 1);
+  border-radius: 4px;
+  height: 10px;
+  width: 100%;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label {
+  background: url('./images/checkbox--unchecked.svg') left top no-repeat;
+  cursor: pointer;
+  padding-left: 50px;
+  min-height: 35px;
+  padding-top: 6px;
+}
+
+input[type=checkbox]:checked + label {
+  background-image: url('./images/checkbox--checked.svg');
+}

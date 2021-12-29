@@ -21,7 +21,8 @@ const indexToDayDescriptionMap = {
   13: "Date Picker",
   14: "Video Playlist",
   15: "Star Rating",
-  16: "Table of Contents"
+  16: "Table of Contents",
+  17: "Password Generator"
 }
 
 dayBoxes.forEach((key, i) => {

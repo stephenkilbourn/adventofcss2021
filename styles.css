@@ -31,22 +31,38 @@ body {
 	font-family: 'Mountains of Christmas', cursive;
   font-weight: 700;
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
   min-width: 100vw; 
   overflow: scroll;
 }
 
 main {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--blue-dark);
+}
+
+h2 {
+  font-size: clamp(
+    1.5rem,
+    3vw + 1rem,
+    2.5rem
+  );
+}
+
+.tree {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1px;
   position: relative;
-  padding: 500px 0;
-  margin: 0;
-  padding-top: 250px;
+  padding: 20px 0;
   max-width: 70rem;
 }
 
@@ -127,12 +143,9 @@ main {
 
 
 @media (min-width: 37rem ) {
-  header {
-    padding-top: 50px;
-  }
-  main {
-  grid-template-columns: repeat(12, 1fr);
-  margin-top: 50px;
+
+  .tree {
+    grid-template-columns: repeat(12, 1fr);
   }
 
   .overlay {
@@ -274,23 +287,7 @@ a:visited {
   color: var(--light-coral)
 }
 
-header {
-  position: absolute;
-  top: 15px;
-  width: 100%;
-  height: 100px;
-  text-align: center;
-  font-size: 3rem;
-  color: var(--blue-dark);
-}
 
-header h2 {
-  font-size: clamp(
-    1.5rem,
-    3vw + 1rem,
-    2.5rem
-  );
-}
 
 /*  Wrapping paper colors */
 
@@ -376,7 +373,7 @@ header h2 {
 );
   }
 
-
+ /* SNOWFLAKE ANIMATIONS  */
 
   .snow {
     --size: 1vw;
@@ -518,6 +515,7 @@ filter: blur(2px)
 }
 
 
+/* Gift Animations  */
 .square {
   perspective: 500px;
   background: none;
@@ -534,7 +532,7 @@ filter: blur(2px)
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 400ms;
+  transition: transform 300ms;
   will-change: transform;
   backface-visibility: hidden;
   /* Vendor prefix for Safari */
@@ -546,17 +544,15 @@ filter: blur(2px)
   left: 0;
   transform: rotateY(-180deg);
 }
-.card:hover .front,
 .card:focus .front {
   transform: rotateY(180deg);
-  animation: shrink 400ms;
+  animation: shrink 300ms;
   animation-fill-mode: forwards;
 
 }
-.card:hover .back,
 .card:focus .back {
-  animation: grow 400ms;
-  animation-delay: 400ms;
+  animation: grow 300ms;
+  animation-delay: 300ms;
   animation-fill-mode: forwards;
 }
 
