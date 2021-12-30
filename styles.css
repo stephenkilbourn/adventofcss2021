@@ -45,16 +45,25 @@ text-align: center;
 
 h1 {
   text-align: center;
-  font-size: 3rem;
+  font-size: clamp(
+    2.5rem,
+    3vw + 1rem,
+    4.5rem
+  );
   color: var(--blue-dark);
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;;
 }
 
 h2 {
   font-size: clamp(
-    1.5rem,
+    1.25rem,
     3vw + 1rem,
-    2.5rem
+    2rem
   );
+  padding: 0;
+  margin: 0;
 }
 
 .tree {
@@ -141,6 +150,9 @@ h2 {
   border-radius: 10px;
 }
 
+.credits {
+  font-size: 1rem;
+}
 
 @media (min-width: 37rem ) {
 
@@ -274,17 +286,21 @@ h2 {
 }
 
 a {
+  color: var(--light-coral);
   text-decoration: none;
-  outline: none;
+  outline-color: var(--gold-dark);
 }
 
-a:link {
-  color: var(--light-coral);
+.tree a {
+  outline: none 
+}
+.tree a:focus {
+  border-bottom: var(--gold-dark) 2px solid;
 }
 
 /* visited link */
 a:visited {
-  color: var(--light-coral)
+  color: var(--sumac)
 }
 
 
@@ -544,13 +560,17 @@ filter: blur(2px)
   left: 0;
   transform: rotateY(-180deg);
 }
-.card:focus .front {
+
+.card:focus-within .front,
+.card:hover .front {
   transform: rotateY(180deg);
   animation: shrink 300ms;
   animation-fill-mode: forwards;
 
 }
-.card:focus .back {
+
+.card:focus-within .back,
+.card:hover .back {
   animation: grow 300ms;
   animation-delay: 300ms;
   animation-fill-mode: forwards;
