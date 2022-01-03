@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Form  || Advent of CSS - Day 19</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <form action="">
+    <h1>Signup</h1>
+    <div class="field">
+      <input type="text" name="name" id="name" placeholder=" ">
+      <label for="name">Name</label>
+      <div class="success"></div>
+      <div class="error"></div>
+    </div>
+    <div class="field">
+      <input type="email" name="email" id="email" placeholder=" ">
+      <label for="email">Email</label>
+      <div class="success"></div>
+      <div class="error"></div>
+    </div>
+
+    <div class="field">
+      <input type="password" name="password" id="password" placeholder=" ">
+      <label for="password">Password</label>
+      <button class="show-hide"></button>
+      <div class="success"></div>
+      <div class="error"></div>
+    </div>
+    <div class="field">
+      <input type="password" name="confirmPassword" id="confirmPassword" placeholder=" ">
+      <label for="confirmPassword">Confirm Password</label>
+      <button class="show-hide"></button>
+      <div class="success"></div>
+      <div class="error"></div>
+    </div>
+    <div class="field" >
+      <input type="submit" name="submit" id="submit" value="Submit" placeholder=" ">
+    </div>
+  </form>
+  <script src="app.js"></script>
+</body>
+</html>
