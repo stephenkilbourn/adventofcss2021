@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;700;900&display=swap');
+
+:root {
+  --color-primary: #FBFF00;
+  --color-secondary: #8d58ff;
+}
+body {
+  background: black;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1.5fr 2.5fr;
+  margin: 0 200px;
+  min-height: 100vh;
+}
+
+aside {
+  border-right: 4px solid var(--color-primary);
+  padding: 100px 35px 0 0;
+}
+
+aside ul {
+  list-style-type: none;
+  margin: 50px 0 0 0;
+  padding: 0;
+}
+
+aside ul li {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+aside ul li.selected:before,
+aside ul li.selected:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -15px;
+  border-top: 35px solid transparent;
+  border-bottom: 35px solid transparent;
+  border-right: 35px solid transparent;
+}
+
+aside ul li.selected:before {
+  border-left: 35px solid var(--color-primary);
+  right: -108px;
+}
+
+aside ul li.selected:after {
+  border-left: 35px solid black;
+  right: -101px;
+}
+
+aside ul li a {
+  text-decoration: none;
+}
+
+aside .episode {
+  color: var(--color-primary);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  margin-bottom: 5px;
+}
+
+aside .title {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.7rem;
+}
+
+aside a:hover .title {
+  color: var(--color-secondary);
+}
+
+main {
+  padding: 100px 0 0 75px;
+  display: flex;
+  gap: 50px;
+}
+
+h1 {
+  color: white;
+  font-size: 2.75rem;
+  font-weight: 900;
+  line-height: 3.125rem;
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 2.375rem;
+}
+
+a.more {
+  background: url('./images/arrow.svg') right center no-repeat;
+  font-family: 'Roboto Mono', monospace;
+  color: var(--color-primary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-right: 30px;
+  transition: all 400ms ease-in-out;
+}
+
+a.more:hover {
+  padding-right: 35px;
+  transition: all 200ms ease-in-out;
+
+}
