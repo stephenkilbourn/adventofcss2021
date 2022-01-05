@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+:root {
+  --color-primary: hsla(108, 88%, 55%, 1);
+  --positive: hsla(108, 51%, 43%, 1);
+  --negative: hsla(0, 84%, 48%, 1);
+}
+
+body {
+  background: black;
+  color: white;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  font-size: bold;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.field {
+  position: relative;
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.3125rem;
+  color: hsla(232, 7%, 59%, 1);
+  position: absolute;
+  top: 12px;
+  left: 20px;
+}
+
+input[type="text"] {
+  background: hsla(227, 16%, 23%, 1);
+  border-radius: 16px;
+  border: 1px solid transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  color: white;
+  padding: 35px 20px 16px;
+  height: 85px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border: var(--color-primary) 1px solid;
+}
+
+input[type="text"]:focus + label {
+  color: var(--color-primary);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0;
+  min-height: 100vh;
+}
+
+.add-panel {
+  background: hsla(232, 16%, 19%, 1);
+  padding: 170px 125px 180px;
+}
+
+.add-expense {
+  margin: 120px 0;
+  display: flex;
+  gap: 24px;
+}
+
+.add-expense-button,
+.delete-expense {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.expense-panel {
+  padding: 220px 125px 180px;
+}
+
+.expense-table {
+  display: grid;
+  grid-template-columns: 1fr 150px auto;
+}
+
+.expense-table div {
+  border-bottom: 2px solid hsla(0, 0%, 19%, 1);
+  padding: 16px 0;
+}
+
+.summary-panel {
+  background: white;
+  color: black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 48px 125px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-label {
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.summary-amount {
+  font-weight: bold;
+  font-size: 3.375rem;
+  line-height: 5rem;
+}
+
+.summary-amount.positive {
+  color: var(--positive)
+}
+
+.summary-amount.negative {
+  color: var(--negative)
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget App || Advent of CSS - Day 21</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="add-panel">
+      <h1>Simplified Budget</h1>
+      <div class="field">
+        <input type="text" name="income" id="incomeInput">
+        <label for="income">Budget Amount</label>
+      </div>
+      <div class="add-expense">
+        <div class="field">
+          <input type="text" name="expense-name" id="vender">
+          <label for="expense-name">Vender</label>
+        </div>
+        <div class="field">
+          <input type="text" name="expense-amount" id="expenseAmount">
+          <label for="expense-amount">Amount</label>
+        </div>
+        <button name="add-expense-button" id="addExpenseButton" class="add-expense-button">
+          <img src="./images/plus.svg" alt="add">
+        </button>
+      </div>
+    </div>
+    <div class="expense-panel">
+      <h2>Expenses</h2>
+      <div class="expense-table" id="expenseTable">
+
+
+      </div>
+
+    </div>
+
+    <div class="summary-panel">
+      <div class="summary-item">
+        <div class="summary-label">Income</div>
+        <div class="summary-amount" id="summary-income">$00.00</div>
+      </div>
+
+      <div class="summary-item">
+        <div class="summary-label">Expenses</div>
+        <div class="summary-amount" id ="sumaryExpense">$00.00</div>
+      </div>
+
+      <div class="summary-item">
+        <div class="summary-label">Balance</div>
+        <div class="summary-amount" id="summaryBalance">$00.00</div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
