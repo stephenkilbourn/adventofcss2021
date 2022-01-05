@@ -358,7 +358,8 @@ a:visited {
 	}
 
   /* Horizontal stripes style */
-  .square:nth-child(7n) {
+  .square:nth-child(6) .card,
+  .square:nth-child(7n) .card{
   background: repeating-linear-gradient(
   45deg,
   var(--goldenrod),
