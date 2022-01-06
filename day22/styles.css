@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Courier+Prime:wght@700&family=Roboto&display=swap');
+body {
+  background: hsla(21, 80%, 92%, 1);
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier Prime', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  position: relative;
+  margin-top: 200px;
+}
+
+.credit-card__wrapper {
+  position: relative;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-334px);
+  z-index: 10;
+}
+
+
+.credit-card__wrapper.flip .credit-card__inner {
+  transform: rotateY(180deg);
+}
+
+.credit-card__inner {
+  position: relative;
+  transition: transform 800ms;
+  transform-style: preserve-3d;
+}
+
+.credit-card--front,
+.credit-card--back {
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: 668px 413px;
+  width: 668px;
+  height: 413px;
+  margin-bottom: -200px;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.credit-card--back {
+  transform: rotateY(180deg) translateX(-334px);
+}
+
+.visa .credit-card--front {
+  background-image: url('./images/cc__visa--front.png')
+}
+
+.visa .credit-card--back {
+  background-image: url('./images/cc__visa--back.png')
+}
+
+.mastercard .credit-card--front {
+  background-image: url('./images/cc__mastercard--front.png');
+}
+
+.mastercard .credit-card--back {
+  background-image: url('./images/cc__mastercard--back.png');
+}
+
+.discover .credit-card--front {
+  background-image: url('./images/cc__discover--front.png');
+}
+
+.discover .credit-card--back {
+  background-image: url('./images/cc__discover--back.png');
+}
+
+.american .credit-card--front {
+  background-image: url('./images/cc__american--front.png');
+}
+
+.american .credit-card--back {
+  background-image: url('./images/cc__american--back.png');
+}
+
+.card-number,
+.card-holder,
+ .expiration-date {
+  position: absolute;
+  font-weight: bold;
+  font-size: 2.25rem;
+  line-height: 47px;
+  width: 575px;
+  top: 184px;
+  left: 118px;
+}
+
+.card-holder {
+  text-transform: uppercase;
+  left: 118px;
+  top: 280px;
+}
+
+.expiration-date {
+  text-transform: uppercase;
+  left: 355px;
+  top: 238px;;
+}
+
+.shadow {
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.65);
+  z-index: -1;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.emboss {
+  z-index: 5;
+  position: absolute;
+  background: linear-gradient(180deg, #FFFFFF 15.34%, #DBDBDB 21.24%, #FFFFFF 37.13%, rgba(188, 203, 217, 0.68) 48.94%, rgba(255, 255, 255, 0.830204) 58.93%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 5;
+  width: 100%;
+  height: 50px;
+}
+
+.signature {
+  font-family: 'Beth Ellen', cursive;
+  font-size: 2rem;
+  position: absolute;
+  left: 105px;
+  top: 142px;
+}
+
+.cvv {
+  position: absolute;
+  right: 110px;
+  top: 170px;
+}
+
+.form {
+  background: white;
+  border-radius: 30px;
+  padding: 200px 60px 60px 60px;
+  box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.25), 0px 0px 95px #F5C7BD;
+  position: relative;
+  z-index: 1;
+  width: 890px;
+}
+
+.row {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 35px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.field {
+  flex: 1;
+}
+
+label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 19px;
+  font-weight: normal;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type=text],
+input[type=number],
+select {
+  font-family: 'Roboto', sans-serif;
+  border: 2px solid hsla(0, 0%, 88%, 1);
+  border-radius: 4px;
+  height: 65px;
+  padding: 0 30px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.25rem;
+  line-height: 23px;
+}
+
+button {
+  background: hsla(338, 67%, 29%, 1);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 23px;
+  padding: 20px 0;
+  box-sizing: border-box;
+  height: 65px;
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+  cursor: pointer;
+}
+
+
+.field__option {
+  display: flex;
+  gap: 20px;
+}
+
+.option__wrapper {
+  flex: 2;
+}
+
+select {
+  background: url('./images/arrow.svg') 95% center no-repeat;
+  appearance: none;
+}

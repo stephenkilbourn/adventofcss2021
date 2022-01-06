@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credit Card Form || Advent of CSS - Day 22</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="credit-card__wrapper visa">
+      <div class="credit-card__inner">
+        <div class="credit-card--front">
+          <div class="card-number">
+            <div class="card-number__shadow shadow">4242 4242 4242 4242</div>
+            <div class="card-number__emboss emboss">4242 4242 4242 4242</div>
+          </div>
+          <div class="card-holder">
+            <div class="card-holder__shadow shadow">Stephen Kilbourn</div>
+            <div class="card-holder__emboss emboss">Stephen Kilbourn</div>
+          </div>
+          <div class="expiration-date">
+            <div class="expiration-date__shadow shadow">12/2022</div>
+            <div class="expiration-date__emboss emboss">12/2022</div>
+          </div>
+        </div>
+        <div class="credit-card--back">
+          <div class="signature">Sign Here</div>
+          <div class="cvv">456</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form">
+      <form action="">
+        <div class="row">
+          <div class="field">
+            <label for="card-number">Card Number</label>
+            <input type="text" name="card-number" />
+          </div>
+
+          <div class="field">
+            <label for="card-holder">Card Holder</label>
+            <input type="text" name="card-holder" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field option__wrapper">
+            <label>Expiration Date</label>
+            <div class="field__option">
+              <select name="expiration-date-month" id="">
+                <option>Month</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+
+              <select name="expiration-date-year" id="">
+                <option>Year</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="cvv">CVV</label>
+            <input type="number" name="cvv" />
+          </div>
+        </div>
+
+        <div class="row">
+          <button>Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+ 
+  <script src="app.js"></script>
+</body>
+</html>
