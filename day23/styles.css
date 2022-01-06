@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Mono:wght@700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 5.875rem;
+  font-weight: bold;
+  line-height: 4.56rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.875rem;
+  padding-bottom: 30px;
+}
+
+.greeting {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.toaster {
+  background: hsla(259, 100%, 67%, 1);
+  color: white;
+  padding: 55px;
+  width: 520px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  transition: bottom 1s ease-in-out;
+}
+
+.toaster.collapsed {
+  bottom: -600px;
+}
+
+.close {
+  position: absolute;
+  top: -40px;
+  left: 55px;
+}
+
+.close-toaster {
+  background: none;
+  border: none;
+  color: hsla(259, 100%, 67%, 1);
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 1rem;
+  letter-spacing: 0.03em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.cover {
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.25);
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.collapsed .cover {
+  opacity: 0;
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+label {
+  color: hsla(61, 100%, 50%, 1);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="email"] {
+  background: hsla(259, 100%, 84%, 1);
+  border: none;
+  border-radius: 4px;
+  width: 325px;
+  height: 55px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.25rem;
+  padding: 0 20px;
+  margin-right: 10px;
+}
+
+.submit {
+  background: none;
+  border: none;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
