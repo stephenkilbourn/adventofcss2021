@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Table || Advent of CSS - Day 24</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <table cellpadding="0" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+          <th class="header__id">ID
+            <button class="sort" id="sortIdBtn">
+              <svg width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="ascending" d="M16.9706 8.48528L8.48529 0L9.29832e-06 8.48528H16.9706Z" />
+                <path class="descending" d="M1.00136e-05 12.4853L8.48529 20.9706L16.9706 12.4853L1.00136e-05 12.4853Z"/>
+              </svg>                
+            </button>
+          </th>
+          <th>Name
+            <button class="sort" id="sortNameBtn">
+              <svg width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="ascending" d="M16.9706 8.48528L8.48529 0L9.29832e-06 8.48528H16.9706Z" />
+                <path class="descending" d="M1.00136e-05 12.4853L8.48529 20.9706L16.9706 12.4853L1.00136e-05 12.4853Z"/>
+              </svg>                
+            </button>
+          </th>
+          <th>Email Address
+            <button class="sort" id="sortEmailBtn">
+              <svg width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="ascending" d="M16.9706 8.48528L8.48529 0L9.29832e-06 8.48528H16.9706Z" />
+                <path class="descending" d="M1.00136e-05 12.4853L8.48529 20.9706L16.9706 12.4853L1.00136e-05 12.4853Z"/>
+              </svg>                
+            </button>
+          </th>
+          <th>Job Title
+            <button class="sort" id="sortTitleBtn">
+              <svg width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="ascending" d="M16.9706 8.48528L8.48529 0L9.29832e-06 8.48528H16.9706Z" />
+                <path class="descending" d="M1.00136e-05 12.4853L8.48529 20.9706L16.9706 12.4853L1.00136e-05 12.4853Z"/>
+              </svg>                
+            </button>
+          </th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+      </tbody>
+
+      <tfoot>
+        <tr class="edit">
+          <td colspan="2" id="totalResults">
+            30 results
+          </td>
+          <td colspan="3">
+            <div class="pagination">
+              <button class="previous" id="previous">
+                <img src="./images/chevron--left.svg" alt="previous">
+              </button>
+              <input type="text" name="currentPage" id="currentPage" value="1">
+              <span>&nbsp;of&nbsp;</span>
+              <span id="totalPages">12</span>
+              <button class="next" id="next">
+                <img src="./images/chevron--right.svg" alt="next">
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+ 
+  <script src="app.js"></script>
+</body>
+</html>
